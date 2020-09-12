@@ -1,8 +1,8 @@
 {
   "name": "chatterscreen-recorder",
-  "productName": "screen_recorder",
+  "productName": "chatter screen.",
   "version": "1.0.1",
-  "description": "fuckoff description",
+  "description": "CARE LESS ",
   "main": "src/main.js",
   "scripts": {
     "start": "electron-forge start",
