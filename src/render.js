@@ -8,6 +8,8 @@ const { dialog, Menu } = remote;
 let mediaRecorder; // MediaRecorder instance to capture footage
 const recordedChunks = [];
 
+
+const audioBtn = document.querySelector('audio');
 // Buttons
 const videoElement = document.querySelector('video');
 
@@ -93,14 +95,14 @@ function handleDataAvailable(e) {
 // Saves the video file on stop
 async function handleStop(e) {
   const blob = new Blob(recordedChunks, {
-    type: 'video/webm; codecs=vp9'
+    type: 'video/mp4; codecs=vp9'
   });
 
   const buffer = Buffer.from(await blob.arrayBuffer());
 
   const { filePath } = await dialog.showSaveDialog({
     buttonLabel: 'Save video',
-    defaultPath: `vid-${Date.now()}.webm`
+    defaultPath: `vid-${Date.now()}.mp4`
   });
 
   if (filePath) {
